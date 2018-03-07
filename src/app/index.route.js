@@ -29,6 +29,21 @@
         controller: 'SubmitController',
         controllerAs: 'submit'
       })
+      .when('/politics', {
+        templateUrl: 'app/views/politics/politics.html',
+        controller: 'PoliticsController',
+        controllerAs: 'politics'
+      })
+      .when('/eat', {
+        templateUrl: 'app/views/eat/eat.html',
+        controller: 'EatController',
+        controllerAs: 'eat'
+      })
+      .when('/find', {
+        templateUrl: 'app/views/find/find.html',
+        controller: 'FindController',
+        controllerAs: 'find'
+      })
       .otherwise({
         redirectTo: '/'
       });
