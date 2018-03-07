@@ -6,34 +6,29 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController(webDevTec, $location) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1520211676686;
-    vm.showToastr = showToastr;
+    vm.mainCards = [];
 
-    activate();
 
-    function activate() {
+    //functions in view:
+    vm.goToView = goToView;
+
+    init();
+
+    function init() {
       getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
     }
 
     function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
+      vm.mainCards = webDevTec.getMain();
     }
+
+    function goToView(card){
+      console.log('card: ', card);
+      $location.path(card.url);
+    }
+
   }
 })();

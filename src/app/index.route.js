@@ -14,18 +14,18 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'app/views/about/about.html',
+      .when('/menu/about', {
+        templateUrl: 'app/views/menu/about/about.html',
         controller: 'AboutController',
         controllerAs: 'about'
       })
-      .when('/contact', {
-        templateUrl: 'app/views/contact/contact.html',
+      .when('/menu/contact', {
+        templateUrl: 'app/views/menu/contact/contact.html',
         controller: 'ContactController',
         controllerAs: 'contact'
       })
-      .when('/submit', {
-        templateUrl: 'app/views/submit/submit.html',
+      .when('/menu/submit', {
+        templateUrl: 'app/views/menu/submit/submit.html',
         controller: 'SubmitController',
         controllerAs: 'submit'
       })

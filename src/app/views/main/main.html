@@ -7,27 +7,20 @@
 
     <section class="jumbotron">
       <h1>Educate My Plate</h1>
-      <p class="lead">
-
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Learn</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </p>
     </section>
 
     <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-        </div>
+      <md-card ng-repeat="card in main.mainCards | orderBy:'rank'" ng-click="main.goToView(card)">
+          <md-button ng-href="{{ card.url }}">
+            <md-card-content>
+              <img class="pull-right" ng-src="assets/images/{{ card.logo }}" alt="{{ card.title }}">
+              <h3 class="md-title">{{ card.title }}</h3>
+              <p>{{ card.description }}</p>
+            </md-card-content>
+          </md-button>
       </md-card>
     </div>
+    
   </md-content>
 
 </div>
