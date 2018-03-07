@@ -10,22 +10,22 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/views/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'app/about/about.html',
+        templateUrl: 'app/views/about/about.html',
         controller: 'AboutController',
         controllerAs: 'about'
       })
       .when('/contact', {
-        templateUrl: 'app/contact/contact.html',
+        templateUrl: 'app/views/contact/contact.html',
         controller: 'ContactController',
         controllerAs: 'contact'
       })
       .when('/submit', {
-        templateUrl: 'app/submit/submit.html',
+        templateUrl: 'app/views/submit/submit.html',
         controller: 'SubmitController',
         controllerAs: 'submit'
       })
