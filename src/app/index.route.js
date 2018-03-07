@@ -5,7 +5,9 @@
     .module('educateMyPlate')
     .config(routeConfig);
 
-  function routeConfig($routeProvider) {
+  function routeConfig($routeProvider, $locationProvider) {
+    // $locationProvider.hashPrefix('');
+
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
