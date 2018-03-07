@@ -24,6 +24,11 @@
         controller: 'ContactController',
         controllerAs: 'contact'
       })
+      .when('/submit', {
+        templateUrl: 'app/submit/submit.html',
+        controller: 'SubmitController',
+        controllerAs: 'submit'
+      })
       .otherwise({
         redirectTo: '/'
       });
