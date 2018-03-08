@@ -53,11 +53,11 @@
 
       vm.contributors = [];
 
-      activate();
+      init();
 
-      function activate() {
+      function init() {
         return getContributors().then(function() {
-          $log.info('Activated Contributors View');
+          $log.info('initd Contributors View');
         });
       }
 

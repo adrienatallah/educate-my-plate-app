@@ -14,9 +14,9 @@
     vm.creationDate = 1520211676686;
     vm.showToastr = showToastr;
 
-    activate();
+    init();
 
-    function activate() {
+    function init() {
       getWebDevTec();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';

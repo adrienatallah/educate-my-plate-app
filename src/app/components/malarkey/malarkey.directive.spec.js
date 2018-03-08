@@ -39,7 +39,7 @@
     });
 
     it('should log a info', function() {
-      expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
+      expect($log.info.logs).toEqual(jasmine.stringMatching('initd Contributors View'));
     });
   });
 })();
