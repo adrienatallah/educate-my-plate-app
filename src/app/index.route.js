@@ -5,8 +5,7 @@
     .module('educateMyPlate')
     .config(routeConfig);
 
-  function routeConfig($routeProvider, $locationProvider) {
-    // $locationProvider.hashPrefix('');
+  function routeConfig($routeProvider) {
 
     $routeProvider
       .when('/', {
