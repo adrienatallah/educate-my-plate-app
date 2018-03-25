@@ -1,12 +1,17 @@
-(function() {
+(function () {
   'use strict';
 
   angular
-      .module('educateMyPlate')
-      .service('webDevTec', webDevTec);
+    .module('educateMyPlate')
+    .service('webDevTec', webDevTec);
 
   /** @ngInject */
   function webDevTec() {
+
+    var env =
+      {
+        'dev': 'http://localhost:9191'
+      }
 
     var main = [
       {
@@ -29,11 +34,11 @@
       }
     ];
 
-    this.getTec = getTec;
+    this.getEnv = env;
     this.getMain = getMain;
 
-    function getTec() {
-      return data;
+    function getEnv() {
+      return env;
     }
 
     function getMain() {
