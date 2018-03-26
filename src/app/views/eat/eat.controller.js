@@ -28,6 +28,8 @@
     }
 
     vm.getProductInfo = function () {
+      vm.infoFound = false;
+
       if (vm.barCode.length < 1) {
         alert('enter barcode');
         return;
@@ -37,6 +39,14 @@
 
       api.getInfoByBarcode(vm.barCode).then(function success(response) {
         console.log('response', response);
+
+        if (response.status == 0) {
+          vm.infoFound = false;
+          console.log('Product not found..');
+          alert('product not found');
+          return;
+        }
+
         vm.productInfo = response;
         vm.infoFound = true;
 
