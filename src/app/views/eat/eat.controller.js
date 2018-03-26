@@ -10,6 +10,8 @@
     var vm = this;
 
     vm.awesomeThings = [];
+    vm.barCode = '';
+    vm.infoFound = false;
 
     init();
 
@@ -26,12 +28,20 @@
     }
 
     vm.getProductInfo = function () {
-      console.log('get product info');
+      if (vm.barCode.length < 1) {
+        alert('enter barcode');
+        return;
+      } else {
+        console.log('get product info for barcode: ', vm.barCode);
+      }
 
-      api.getInfoByBarcode('02200015934').then(function success(response) {
+      api.getInfoByBarcode(vm.barCode).then(function success(response) {
         console.log('response', response);
+        vm.productInfo = response;
+        vm.infoFound = true;
 
       }, function error(response) {
+        vm.infoFound = true;
         console.log('error: ', error);
       });
 

@@ -8,21 +8,43 @@
     <section class="jumbotron">
       <h1>Educate My Plate - Eat</h1>
       <p class="lead">
-
+        <md-input-container class="md-icon-float md-block">
+          <!-- Use floating label instead of placeholder -->
+          <label>Bar Code</label>
+          <span class="glyphicon glyphicon-barcode"></span>
+          <input ng-model="eat.barCode" type="text">
+        </md-input-container>
       </p>
       <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="eat.getProductInfo()">Look UP</md-button>
 
     </section>
-
-    <md-button ng-href="">Learn</md-button>
-
-    <div class="techs" layout-align="center">
-      <div class="md-action-buttons">
-        adsf
-        <md-button ng-href="">Learn</md-button>
-        <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-      </div>
-    </div>
   </md-content>
-
 </div>
+
+<div ng-show="eat.infoFound">
+  <md-toolbar layout="row" class="md-hue-3">
+    <div class="md-toolbar-tools">
+      <span>Product Info</span>
+    </div>
+  </md-toolbar>
+
+  <md-content>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{eat.productInfo.product.product_name}}</span>
+          <span class="md-subhead">{{eat.productInfo.product.ingredients_text}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+          <img ng-src="{{eat.productInfo.product.image_ingredients_url}}" class="md-card-image" alt="Washed Out">
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+      </md-card-actions>
+    </md-card>
+  </md-content>
+</div>
+<md-divider></md-divider>
